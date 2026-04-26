@@ -1,0 +1,35 @@
+# Proctor360 Combined Root Requirements
+# This file aggregates dependencies for both API and AI Engine services
+
+# Web Framework & Server
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.6
+pydantic>=2.9.2
+pydantic-settings
+python-multipart
+python-dotenv
+websockets
+aiofiles
+httpx
+
+# Database & Storage
+sqlalchemy
+psycopg[binary]
+alembic
+redis
+
+# Security
+python-jose[cryptography]
+passlib[bcrypt]
+bcrypt
+email-validator
+
+# AI & Media Processing
+opencv-python-headless>=4.10.0.84
+numpy>=2.1.1
+Pillow
+
+# Utilities
+fpdf2
+prometheus-client
+
