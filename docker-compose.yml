@@ -17,7 +17,7 @@ services:
 
   api:
     build:
-      context: ./backend/api
+      context: ./api
     env_file:
       - .env
     depends_on:
@@ -29,7 +29,7 @@ services:
 
   ai-engine:
     build:
-      context: ./backend/ai-engine
+      context: ./ai-engine
     env_file:
       - .env
     ports:
@@ -37,7 +37,7 @@ services:
 
   student-portal:
     build:
-      context: ./frontend/student-portal
+      context: ../frontend/student-portal
       args:
         VITE_API_BASE_URL: ${API_BASE_URL}
         VITE_WS_BASE_URL: ${WS_BASE_URL}
@@ -48,7 +48,8 @@ services:
 
   admin-dashboard:
     build:
-      context: ./frontend/admin-dashboard
+      context: ../frontend/admin-dashboard
+
       args:
         VITE_API_BASE_URL: ${API_BASE_URL}
         VITE_WS_BASE_URL: ${WS_BASE_URL}
